@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55477305216",
+    "project_id": "cinemapedia-c4495",
+    "storage_bucket": "cinemapedia-c4495.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55477305216:android:f5a98023743e6fcb594b65",
+        "android_client_info": {
+          "package_name": "com.example.cinemapedia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztIHJqA5lQYY67K1EsDBfQAi1wzNjSvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
