@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cinemapedia/presentation/screens/movies/search_screen.dart';
 import 'package:cinemapedia/presentation/screens/screens.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,15 @@ final appRouter = GoRouter(
       name: RegisterScreen.name,
       builder: (context, state) => RegisterScreen(),
     ),
+     GoRoute(
+      path: '/search',
+      name: SearchScreen.name,
+      builder: (context, state) => SearchScreen(),
+    ),
   ],
+
+
+  
   redirect: (context, state) {
     final user = FirebaseAuth.instance.currentUser;
     final isAuthenticated = user != null;

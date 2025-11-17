@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar({super.key});
@@ -21,7 +22,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
               Text('Cinemapedia', style: titleStyle),
               Spacer(),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  //FUNCIONALIDAD: Navegar a pantalla de búsqueda
+                  context.push('/search');
+                },
                 icon: Icon(Icons.search_outlined),
               ),
             ],

@@ -2,10 +2,12 @@ import 'package:cinemapedia/config/constants/environment.dart';
 import 'package:cinemapedia/domain/datasources/movies_datasource.dart';
 import 'package:cinemapedia/domain/entities/actor.dart';
 import 'package:cinemapedia/domain/entities/movies.dart';
+import 'package:cinemapedia/domain/entities/search_result.dart';
 import 'package:cinemapedia/infrastructure/mappers/movie_mapper.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/movie_credits.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/movie_details.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/moviedb_response.dart';
+import 'package:cinemapedia/infrastructure/models/moviedb/search_response.dart';
 import 'package:dio/dio.dart';
 
 class MoviedbDatasource extends MoviesDatasource {
@@ -104,6 +106,43 @@ class MoviedbDatasource extends MoviesDatasource {
 
     return actors;
   }
+ @override
+  Future<List<SearchResult>> searchMovies(String query, {int page = 1}) async {
+    if (query.isEmpty) return [];
+
+    final response = await dio.get(
+      '/search/multi',
+      queryParameters: {
+        'query': query,
+        'page': page,
+        'include_adult': false,
+      },
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception('Error en la búsqueda');
+    }
+
+    final searchResponse = SearchResponse.fromJson(response.data);
+    
+    // Filtrar solo películas y series (excluir personas por ahora)
+    final List<SearchResult> results = searchResponse.results
+        .where((item) => item.mediaType == 'movie' || item.mediaType == 'tv')
+        .map((item) => SearchResult(
+              id: item.id,
+              title: item.title,
+              posterPath: item.posterPath,
+              backdropPath: item.backdropPath,
+              mediaType: item.mediaType ?? 'movie',
+              voteAverage: item.voteAverage,
+              releaseDate: item.releaseDate,
+              overview: item.overview,
+            ))
+        .toList();
+
+    return results;
+  }
 }
+
 
 

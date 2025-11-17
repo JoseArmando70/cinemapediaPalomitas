@@ -3,4 +3,5 @@ export 'movies/movies_repository_provider.dart';
 export 'movies/movies_slideshow_provider.dart';
 export 'movies/initial_loading_provider.dart';
 export 'movies/movie_info_provider.dart';
+export 'movies/search_provider.dart';
 export 'auth/auth_provider.dart';
