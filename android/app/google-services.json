@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "55477305216",
+    "project_id": "cinemapedia-c4495",
+    "storage_bucket": "cinemapedia-c4495.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55477305216:android:f5a98023743e6fcb594b65",
+        "android_client_info": {
+          "package_name": "com.example.cinemapedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55477305216-r18mmr3fih00osbn5n2gpjovgrbvcjmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cinemapedia",
+            "certificate_hash": "c82d06a37b57762753b00382a8c68a71919ab6a8"
+          }
+        },
+        {
+          "client_id": "55477305216-s5rlptcgqpou2a72thapjkm64f87o9il.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztIHJqA5lQYY67K1EsDBfQAi1wzNjSvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55477305216-s5rlptcgqpou2a72thapjkm64f87o9il.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
