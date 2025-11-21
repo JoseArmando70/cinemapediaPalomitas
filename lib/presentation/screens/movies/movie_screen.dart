@@ -10,6 +10,7 @@ import 'package:cinemapedia/presentation/providers/storage/favorite_list_provide
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MovieScreen extends ConsumerStatefulWidget {
   static const name = 'movie-screen';
@@ -59,6 +60,16 @@ class MovieScreenState extends ConsumerState<MovieScreen> {
         ],
       ),
     );
+  }
+}
+
+Future<void> launchYouTubeVideo(String videoId) async {
+  final url = Uri.parse("https://www.youtube.com/watch?v=$videoId");
+
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  } else {
+    throw 'No se pudo abrir el video $videoId';
   }
 }
 
