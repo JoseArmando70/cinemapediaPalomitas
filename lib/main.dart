@@ -8,13 +8,29 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+ 
+  await dotenv.load(fileName: ".env");
+
+  //  Inicialización de Firebase 
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      print("✅ Firebase inicializado correctamente");
+    } else {
+      print("ℹ️ Firebase ya estaba inicializado");
+    }
+  } catch (e) {
+    // Si falla 
+    print("⚠️ Error controlado de Firebase (La app continuará): $e");
+  }
+
+  //  Arrancar la App
   runApp(
-    ProviderScope(child: MainApp())
+    const ProviderScope(child: MainApp())
   );
 }
 
@@ -49,3 +65,5 @@ class MainApp extends ConsumerWidget {
     );
   }
 }
+
+// Prueba de git

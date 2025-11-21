@@ -38,12 +38,19 @@ final appRouter = GoRouter(
       name: SearchScreen.name,
       builder: (context, state) => SearchScreen(),
     ),
-    // ✅ NUEVAS RUTAS AGREGADAS
+   
     GoRoute(
       path: '/categories',
       name: CategoriesScreen.name,
       builder: (context, state) => CategoriesScreen(),
     ),
+
+    GoRoute(
+      path: '/favorites', 
+      name: FavoritesScreen.name,
+      builder: (context, state) => const FavoritesScreen(),
+    ),
+    
     GoRoute(
       path: '/genre/:id',
       name: MoviesByGenreScreen.name,

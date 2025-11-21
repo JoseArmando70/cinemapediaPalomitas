@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "55477305216-r18mmr3fih00osbn5n2gpjovgrbvcjmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cinemapedia",
+            "certificate_hash": "c82d06a37b57762753b00382a8c68a71919ab6a8"
+          }
+        },
+        {
           "client_id": "55477305216-s5rlptcgqpou2a72thapjkm64f87o9il.apps.googleusercontent.com",
           "client_type": 3
         }

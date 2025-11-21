@@ -69,6 +69,9 @@ class _AuthenticatedBottomBar extends ConsumerWidget {
         if (index == 1) { // Índice de "Categorias"
           context.push('/categories');
         }
+        if (index == 2) { 
+        context.go('/favorites');
+      }
         if (index == 3) { // Índice del item "Mi Perfil"
           _showProfileMenu(context, ref);
         }
